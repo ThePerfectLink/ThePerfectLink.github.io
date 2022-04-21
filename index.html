@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Portfolio</title>
+	<link rel="stylesheet" href="styles/styles.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="main-content">
+	<header class="base">
+		<div id="ctx" class="canvas_for_three">
+		</div>
+	</header>
+	<main>
+		<section class="section sec1 home" id="home">
+			<div class="return"><i class="fa-solid fa-angle-down fa-2xl"></i></div>
+		</section>
+		<section class="section sec2 about" id="about">
+			<div class="return"><i class="fa-solid fa-angle-down fa-2xl"></i></div>
+		</section>
+		<section class="section sec3 portfolio" id="portfolio">
+			<div class="return"><i class="fa-solid fa-angle-down fa-2xl"></i></div>
+		</section>
+		<section class="section sec4 blogs" id="blog">
+			<div class="return"><i class="fa-solid fa-angle-down fa-2xl"></i></div>
+		</section>
+		<section class="section sec5 contact" id="contact">
+			<div class="return"><i class="fa-solid fa-angle-down fa-2xl"></i></div>
+		</section>
+	</main>
+	<div class="controls">
+		<div class="control control-1 navtop" data-id="home"> <i class="fa-solid fa-house-chimney-window fa-2xl navicon navtop" data-id="home"></i> </div>
+		<div class="control control-2" data-id="about"> <i class="fa-solid fa-user-graduate fa-2xl navicon" data-id="about"></i> </div>
+		<div class="control control-3" data-id="portfolio"> <i class="fa-solid fa-box-archive fa-2xl navicon" data-id="portfolio"></i> </div>
+		<div class="control control-4" data-id="blog"> <i class="fa-solid fa-feather fa-2xl navicon" data-id="blog"></i> </div>
+		<div class="control control-5 navbottom" data-id="contact"> <i class="fa-solid fa-inbox fa-2xl navicon" data-id="contact"></i> </div>
+	</div> 
+
+	<script src="app.js"></script>
+	<script src="js/three.js"></script>
+	<script type="module" src="nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+/* CSS Document */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  list-style: none;
+}
+
+:root {
+  --color-background-primary: #212121;
+  --color-background-secondary: #383838;
+  --color-background-tertiary: #1f1f1f;
+  --color-accent: #2E0469;
+  --color-accent-primary: #43069A;
+  --color-accent-secondary: #8D069A;
+  --color-accent-tertiary: #06139A;
+  --color-accent-contrast-1: #9A0613;
+  --color-accent-contrast-2: #5D9A06;
+  --color-accent-contrast-3: #069A8D;
+  --transition-slide: all .4s ease-in-out;
+  --transition-menu: all .1s ease-in;
+  --box-shadow: 0 .1vw .4vh rgba(0,0,0,0.5);
+}
+
+body {
+  background-color: black;
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-size: 1.1rem;
+  color: white;
+  -webkit-transition: var(--transition-slide);
+  transition: var(--transition-slide);
+  overflow: hidden;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+}
+
+header {
+  height: 100vh;
+  color: white;
+  overflow: hidden;
+}
+
+section {
+  min-height: 100vh;
+  width: 80%;
+  position: absolute;
+  padding: .8rem 18rem;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+  top: 0;
+}
+
+.sec1 {
+  -webkit-transform: translateY(95%) translateX(10vw);
+          transform: translateY(95%) translateX(10vw);
+  background-color: var(--color-background-primary);
+}
+
+.sec2 {
+  -webkit-transform: translateY(96%) translateX(10vw);
+          transform: translateY(96%) translateX(10vw);
+  background-color: var(--color-background-secondary);
+}
+
+.sec3 {
+  -webkit-transform: translateY(97%) translateX(10vw);
+          transform: translateY(97%) translateX(10vw);
+  background-color: var(--color-background-tertiary);
+}
+
+.sec4 {
+  -webkit-transform: translateY(98%) translateX(10vw);
+          transform: translateY(98%) translateX(10vw);
+  background-color: var(--color-background-secondary);
+}
+
+.sec5 {
+  -webkit-transform: translateY(99%) translateX(10vw);
+          transform: translateY(99%) translateX(10vw);
+  background-color: var(--color-background-primary);
+}
+
+.active {
+  display: block;
+  -webkit-transform: translateY(5%) translateX(10vw);
+          transform: translateY(5%) translateX(10vw);
+}
+
+.controls {
+  position: fixed;
+  z-index: 10;
+  top: 50%;
+  right: 1vw;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.controls .active-btn .navicon {
+  color: white;
+}
+
+.controls .control {
+  z-index: 0;
+  cursor: pointer;
+  width: 1vw;
+  height: 4vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+}
+
+.controls .navtop {
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+
+.controls .navbottom {
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+.controls .navicon {
+  z-index: 12;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  color: var(--color-accent-contrast-3);
+}
+
+.controls .control:hover .navicon {
+  z-index: 2;
+  -webkit-transform: scale(1.5) translateX(-60%);
+          transform: scale(1.5) translateX(-60%);
+  color: white;
+}
+
+.canvas_for_three {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.return {
+  background-color: white;
+  height: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+/*# sourceMappingURL=styles.css.map */
