@@ -27,7 +27,7 @@ const center = new THREE.Vector3(0,1,0);
 
 class Camera {
     constructor() {
-        this.camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.1, 16000);
+        this.camera = new THREE.PerspectiveCamera(80, window.innerWidth / window.innerHeight, 0.1, 16000);
         this.group = new THREE.Group();
         this.focus;
         this.controls = new THREE.OrbitControls(this.camera, canvas);
@@ -38,14 +38,15 @@ class Camera {
         this.controls.maxDistance = 1000;
         this.group.add(this.camera);
         this.controls.update();
+        this.setFocus(planets[0]);
     }
     setFocus(planet) {
         this.focus = planet;
         let temp = this.focus.group.children[this.focus.group.children.length-1].matrixWorld.elements;
         let zoom = this.focus.radius;
         this.controls.minDistance = this.focus.radius + 2;
+        this.controls.target.set(temp[12], temp[13], temp[14]);
         this.camera.position.set(temp[12]-2*zoom, temp[13]+2*zoom, temp[14]+2*zoom);
-        this.refocus();
     }
     refocus() {
         let temp = this.focus.group.children[this.focus.group.children.length-1].matrixWorld.elements;
@@ -154,7 +155,6 @@ for(let i = 0; i < lights.length; i++) {
 }
 
 let globalCamera = new Camera();
-globalCamera.setFocus(planets[0]);
 
 // -- End initialization of objects --
 
