@@ -7,7 +7,7 @@ let starPrimaryColors = [
     "d2fefd", "a0fcfb", "3bfaf6", "d4fdf3", "edffb8", "faffec", "bebfff",
     "e1ebfe", "f3e2ff", "ffdaf9", "ffe27c", "fff8e1", "ffceca", "ffc700"
 ];
-const sunSize = 39;
+const sunSize = 43;
 
 const scene = new THREE.Scene();
 const renderer = new THREE.WebGLRenderer();
@@ -15,7 +15,7 @@ renderer.domElement.addEventListener("click", onclick, true);
 renderer.setSize(window.innerWidth, window.innerHeight);
 canvas.appendChild(renderer.domElement); 
 
-const geometry = new THREE.BoxGeometry();
+const geometry = new THREE.BoxGeometry(1,1,1);
 var material = new THREE.MeshToonMaterial({color: 0x00ff00});
 
 const raycaster = new THREE.Raycaster();
@@ -23,33 +23,35 @@ const mouse = new THREE.Vector2();
 const center = new THREE.Vector3(0,1,0);
 
 // -- End initialization of environment --
-// -- Start constructor declarations --
+// -- Start class declarations --
 
 class Camera {
-    constructor(planet) {
-        this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 20000);
+    constructor() {
+        this.camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.1, 16000);
         this.group = new THREE.Group();
-        this.focus = planet;
+        this.focus;
         this.controls = new THREE.OrbitControls(this.camera, canvas);
         this.controls.enablePan = false;
+        this.controls.autoRotate = false;
         this.controls.enableRotate = false;
+        this.controls.autoRotateSpeed = 0.5;
         this.controls.maxDistance = 1000;
         this.group.add(this.camera);
         this.controls.update();
-        
     }
     setFocus(planet) {
         this.focus = planet;
         let temp = this.focus.group.children[this.focus.group.children.length-1].matrixWorld.elements;
         let zoom = this.focus.radius;
-        this.camera.position.set(temp[12]-2*zoom, temp[13]+2*zoom, temp[14]-10*zoom);
+        this.controls.minDistance = this.focus.radius + 2;
+        this.camera.position.set(temp[12]-2*zoom, temp[13]+2*zoom, temp[14]+2*zoom);
         this.refocus();
     }
     refocus() {
         let temp = this.focus.group.children[this.focus.group.children.length-1].matrixWorld.elements;
         let zoom = this.focus.radius;
-        this.camera.position.set(temp[12]-2*zoom, this.camera.position.y, temp[14]+2*zoom);
         this.controls.target.set(temp[12], temp[13], temp[14]);
+        this.camera.position.set(temp[12]-2*zoom, this.camera.position.y, temp[14]+2*zoom); 
     }
 }
 
@@ -106,19 +108,24 @@ class Star {
 export default class SceneTransitions {
     static sceneSwitch(planetInt){
         globalCamera.setFocus(planets[planetInt]);
+        if(globalCamera.focus == planets[0]) {
+            globalCamera.controls.autoRotate=true;
+        } else {
+            globalCamera.controls.enableRotate=false;
+        }
     }
 }
 
-// -- End constructor declarations --
+// -- End class declarations --
 // -- Start initialization of objects --
 
 let planets = [
     new Planet(sunSize, new THREE.Vector3(0,0,0),0xF6F890,0xF8C690, 0),
-    new Planet(sunSize*.50, new THREE.Vector3(100,(sunSize/2)-(sunSize*.23)/2,100),0x02a2ff,0x0224ff, 0.0007),
-    new Planet(sunSize*.42, new THREE.Vector3(200,(sunSize/2)-(sunSize*.41)/2,200),0xff3c19,0xffaf19, 0.0009),
-    new Planet(sunSize*.61, new THREE.Vector3(300,(sunSize/2)-(sunSize*.55)/2,300),0x0dff7a,0x8877f3, 0.00135),
-    new Planet(sunSize*.73, new THREE.Vector3(400,(sunSize/2)-(sunSize*.73)/2,400),0x332288,0x21B899, 0.0004),
-    new Planet(sunSize*.41, new THREE.Vector3(550,(sunSize/2)-(sunSize*.37)/2,550),0xEB14DC,0x14EB23, 0.0006)
+    new Planet(sunSize*.24, new THREE.Vector3(100,(sunSize/2)-(sunSize*.24)/2,100),0x02a2ff,0x0224ff, 0.0007),
+    new Planet(sunSize*.40, new THREE.Vector3(200,(sunSize/2)-(sunSize*.40)/2,-200),0xff3c19,0xffaf19, 0.0009),
+    new Planet(sunSize*.30, new THREE.Vector3(300,(sunSize/2)-(sunSize*.30)/2,-300),0x0dff7a,0x8877f3, 0.00135),
+    new Planet(sunSize*.26, new THREE.Vector3(-400,(sunSize/2)-(sunSize*.26)/2,400),0x332288,0x21B899, 0.0004),
+    new Planet(sunSize*.20, new THREE.Vector3(550,(sunSize/2)-(sunSize*.20)/2,550),0xEB14DC,0x14EB23, 0.0006)
 ];
 
 let starArray = new Array(5000);
@@ -142,10 +149,11 @@ lights[3].position.set( -23, 0, 0 );
 lights[4].position.set( 0, 23, 0 );
 lights[5].position.set( 0, -23, 0 );
 for(let i = 0; i < lights.length; i++) {
+    lights[i].shadow.far = 1000;
     scene.add( lights[i] );
 }
 
-let globalCamera = new Camera(planets[0]);
+let globalCamera = new Camera();
 globalCamera.setFocus(planets[0]);
 
 // -- End initialization of objects --
@@ -193,7 +201,9 @@ function animate() {
             element.decay -= .001;
         }
     });
-    globalCamera.refocus();
+    if(globalCamera.focus != planets[0]) {
+        globalCamera.refocus();
+    }
     globalCamera.controls.update();
     renderer.render(scene, globalCamera.camera);
     requestAnimationFrame(animate);
@@ -216,6 +226,12 @@ window.addEventListener( 'mousedown', event => {
             }
         }
         globalCamera.setFocus(planets[closest]);
+        if(globalCamera.focus == planets[0]) {
+            globalCamera.controls.autoRotate=true;
+        } else {
+            globalCamera.controls.enableRotate=false;
+        }
+        
     }
 } );
 window.requestAnimationFrame(animate);
