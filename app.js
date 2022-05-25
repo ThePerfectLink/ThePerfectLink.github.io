@@ -1,3 +1,6 @@
+import SceneTransitions from './nav.js';
+
+
 const sections = document.querySelectorAll(".section");
 const sectBtns = document.querySelectorAll(".controls");
 const sectBtn = document.querySelectorAll(".control");
@@ -44,6 +47,7 @@ function PageTransitions(){
 
             const element = document.getElementById(id);
             element.classList.add('active');
+            SceneTransitions.sceneSwitch(element.classList[3]);
         }
         
     });
@@ -51,7 +55,10 @@ function PageTransitions(){
     for(let i = 0; i < sectRtn.length; i++) {
         sectRtn[i].addEventListener('click', function(){
             let currentBtn = document.querySelectorAll('.active-btn');
-            currentBtn[0].className = currentBtn[0].className.replace(' active-btn', '');
+            if(currentBtn[0])
+                currentBtn[0].className = currentBtn[0].className.replace(' active-btn', '');
+            else
+            SceneTransitions.sceneSwitch(0);
             sections.forEach((section)=>{
                 section.classList.remove('active');
             });
