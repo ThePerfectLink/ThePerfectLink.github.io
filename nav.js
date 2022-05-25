@@ -1,6 +1,7 @@
 var canvas = document.getElementById('ctx');
 import './js/OrbitControls.js';
 
+// -- Start initialization of environment --
 
 const sunSize = 41;
 let time=0;
@@ -24,10 +25,8 @@ const raycaster = new THREE.Raycaster();
 const mouse = new THREE.Vector2();
 const center = new THREE.Vector3(0,1,0);
 
-let starArray = new Array(5000);
-for(let i = 0; i < starArray.length; i++){
-    starArray[i] = new Star();
-}
+// -- End initialization of environment --
+// -- Start constructor declarations --
 
 class Camera {
     constructor(planet) {
@@ -104,6 +103,9 @@ class Star {
     }
 }
 
+// -- End constructor declarations --
+// -- Start initialization of objects --
+
 let planets = [
     new Planet(sunSize, new THREE.Vector3(0,0,0),0xF6F890,0xF8C690, 0),
     new Planet(sunSize*.43, new THREE.Vector3(100,(sunSize/2)-(sunSize*.23)/2,100),0x02a2ff,0x0224ff, 0.0007),
@@ -112,6 +114,11 @@ let planets = [
     new Planet(sunSize*.73, new THREE.Vector3(400,(sunSize/2)-(sunSize*.73)/2,400),0x332288,0x21B899, 0.0004),
     new Planet(sunSize*.37, new THREE.Vector3(550,(sunSize/2)-(sunSize*.37)/2,550),0xEB14DC,0x14EB23, 0.0006)
 ];
+
+let starArray = new Array(5000);
+for(let i = 0; i < starArray.length; i++){
+    starArray[i] = new Star();
+}
 
 const lightside = new THREE.PointLight( 0xffff80, .3, 1000 );
 const lightside2 = new THREE.PointLight( 0xffff80, .3, 1000 );
@@ -134,6 +141,8 @@ scene.add( lightside6 );
 
 let globalCamera = new Camera(planets[0]);
 globalCamera.setFocus(planets[0]);
+
+// -- End initialization of objects --
 
 
 function resizeRendererToDisplaySize(renderer) {
