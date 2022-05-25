@@ -24,9 +24,6 @@ const raycaster = new THREE.Raycaster();
 const mouse = new THREE.Vector2();
 const center = new THREE.Vector3(0,1,0);
 
-let globalCamera = new Camera(planets[0]);
-globalCamera.setFocus(planets[0]);
-
 let starArray = new Array(5000);
 for(let i = 0; i < starArray.length; i++){
     starArray[i] = new Star();
@@ -116,8 +113,6 @@ let planets = [
     new Planet(sunSize*.37, new THREE.Vector3(550,(sunSize/2)-(sunSize*.37)/2,550),0xEB14DC,0x14EB23, 0.0006)
 ];
 
-
-
 const lightside = new THREE.PointLight( 0xffff80, .3, 1000 );
 const lightside2 = new THREE.PointLight( 0xffff80, .3, 1000 );
 const lightside3 = new THREE.PointLight( 0xffff80, .3, 1000 );
@@ -136,6 +131,9 @@ lightside5.position.set( 0, 23, 0 );
 lightside6.position.set( 0, -23, 0 );
 scene.add( lightside5 );
 scene.add( lightside6 );
+
+let globalCamera = new Camera(planets[0]);
+globalCamera.setFocus(planets[0]);
 
 
 function resizeRendererToDisplaySize(renderer) {
