@@ -117,6 +117,12 @@ export default class SceneTransitions {
     }
 }
 
+export default class ColorSwitch {
+    static colorSwitch() {
+        
+    }
+}
+
 // -- End class declarations --
 // -- Start initialization of objects --
 
@@ -135,12 +141,12 @@ for(let i = 0; i < starArray.length; i++){
 }
 
 let lights = [
-    new THREE.PointLight( 0xffff80, .2, 850 ),
-    new THREE.PointLight( 0xffff80, .2, 850 ),
-    new THREE.PointLight( 0xffff80, .2, 850 ),
-    new THREE.PointLight( 0xffff80, .2, 850 ),
-    new THREE.PointLight( 0xffff80, .2, 850 ),
-    new THREE.PointLight( 0xffff80, .2, 850 )
+    new THREE.PointLight( 0xfcfa8c, .31, 1600, 4),
+    new THREE.PointLight( 0xffb21b, .38, 1600, 4),
+    new THREE.PointLight( 0xff5e48, .31, 1600, 4),
+    new THREE.PointLight( 0xffb21b, .38, 1600, 4),
+    new THREE.PointLight( 0xfcfa8c, .31, 1600, 4),
+    new THREE.PointLight( 0xff5e48, .38, 1600, 4)
 ];
 
 lights[0].position.set( 0, 0, 23 );
