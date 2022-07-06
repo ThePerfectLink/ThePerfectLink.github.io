@@ -204,9 +204,9 @@ let globalCamera = new Camera();
 
 function resizeRendererToDisplaySize(renderer) {
     const canvas = renderer.domElement;
-    const width = canvas.clientWidth;
-    const height = canvas.clientHeight;
-    const needResize = canvas.width !== width || canvas.height !== height;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    const needResize = canvas.width != width || canvas.height != height;
     if (needResize) {
         renderer.setSize(width, height, false);
     }
@@ -220,8 +220,11 @@ function getCenter(x,y,z,size) {
 function animate() {
     if (resizeRendererToDisplaySize(renderer)) {
         const canvas = renderer.domElement;
-        globalCamera.camera.aspect = canvas.clientWidth / canvas.clientHeight;
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        globalCamera.camera.aspect = canvas.width / canvas.height;
         globalCamera.camera.updateProjectionMatrix();
+        renderer.setSize( window.innerWidth, window.innerHeight)
     }
     planets.forEach(element => {
         element.group.rotateOnAxis(center,element.rotation);
