@@ -7,10 +7,13 @@ const sectBtn = document.querySelectorAll(".control");
 const sectRtn = document.querySelectorAll(".return");
 const sectIcon = document.querySelectorAll(".navicon");
 const allSections = document.querySelector(".main-content");
+const colorRtn = document.querySelectorAll(".returnUpwards");
+const allColorPickers = document.querySelectorAll(".colorPicker");
 
 function PageTransitions(){
     //button click
     for(let i = 0; i < sectBtn.length; i++) {
+
         sectBtn[i].addEventListener('click', function(){
             let currentBtn = document.querySelectorAll('.active-btn');
             this.className += ' active-btn';
@@ -20,6 +23,7 @@ function PageTransitions(){
             }
             
         });
+
         sectIcon[i].addEventListener('click', function(){
             let currentBtn = document.querySelectorAll('.active-btn');
             this.className += ' active-btn';
@@ -51,7 +55,8 @@ function PageTransitions(){
         }
         
     });
-    //deactivate
+
+    //deactivate content
     for(let i = 0; i < sectRtn.length; i++) {
         sectRtn[i].addEventListener('click', function(){
             let currentBtn = document.querySelectorAll('.active-btn');
@@ -66,4 +71,33 @@ function PageTransitions(){
     }
 }
 
+function ColorTransitions() {
+
+        //deactivate color
+        for(let i = 0; i < colorRtn.length; i++) {
+            colorRtn[i].addEventListener('click', function(){
+                let currentBtn = document.querySelectorAll('.active-btnUp');
+                currentBtn[0].className = currentBtn[0].className.replace(' active-btnUp', '');
+                let currentBox = document.querySelectorAll('.activeUp');
+                if(currentBox[0] == undefined){
+                } else {
+                    currentBox[0].className = currentBox[0].className.replace(' activeUp', '');
+                }
+            });
+        }
+}
+
+export default function ColorTransition(id) {
+    //Activate colors
+    colorRtn.forEach(function(current) {
+        current.classList.remove('active-btnUp');
+    });
+    allColorPickers.forEach(function(current) {
+        current.classList.remove('activeUp');
+    });
+    colorRtn[id].classList.add("active-btnUp");
+    allColorPickers[id].classList.add("activeUp");
+}
+
 PageTransitions();
+ColorTransitions();

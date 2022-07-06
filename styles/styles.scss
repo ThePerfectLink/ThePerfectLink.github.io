@@ -36,8 +36,30 @@ body {
   align-items: center;
 }
 
-.content {
+.colorPicker {
+  min-height: 26vh;
+  width: 8%;
+  position: absolute;
+  transition: 0.8s;
+  top: 0;
+  transform: translateY(-100%) translateX(92vw);
+  padding: 1%;
+  background-color: var(--color-background-primary);
+  h4 {
+    font-size: 1.4vh;
+    text-align: center;
+  }
+}
 
+.returnUp{
+  position: absolute;
+  width: 90%;
+  bottom: 0;
+  left: 5%;
+  align-items: center;
+  i {
+    transform: translateY(5%) translateX(3vw);
+  }
 }
 
 a {
@@ -47,50 +69,86 @@ a {
   font-family: inherit;
 }
 
+input[type=color] { 
+  right: 0;
+  display: inline-block;
+  border-radius: 30%;
+  background-color: var(--color-background-secondary);
+  height: 3.5vh;
+  margin: 3%;
+  width: 6vw;
+  border: none;
+  outline: none;
+}
+input[type=color]::-webkit-color-swatch-wrapper {
+  padding: 2%; 
+}
+input[type=color]::-webkit-color-swatch {
+  border: none ;
+  border-radius: 30%;
+}
+
+input[type=color]:hover {
+  background-color: var(--color-background-secondary);
+}
+
+input[type=color]:active {
+  background-color: var(--color-accent-secondary);
+}
+
+
+.row{
+  display:flex;
+}
+
+input[type=reset] {
+  position: absolute;  
+  left: 1vw;  
+  color:white;
+  display: inline-block;
+  border-radius: 30%;
+  background-color: var(--color-background-tertiary);
+  height: 3.6vh;
+  width: 3vw;
+  margin: 2%;
+  border: none;
+  outline: none;
+}
+
+input[type=reset]:hover {
+  background-color: var(--color-background-secondary);
+}
+
+input[type=reset]:active {
+  background-color: var(--color-accent-secondary);
+}
+
+
 header {
   height: 100vh;
   color: white;
   overflow: hidden;
 }
 
-section {
+.section {
   min-height: 100vh;
   width: 80%;
   position: absolute;
-  padding: .8rem 18rem;
   transition: 0.8s;
   top: 0;
-}
-
-.sec1 {
-  transform: translateY(95%) translateX(10vw);
-  padding: 1%;
-  background-color: var(--color-background-primary);
-}
-.sec2 {
   transform: translateY(96%) translateX(10vw);
   padding: 1%;
-  background-color: var(--color-background-secondary);
-}
-.sec3 {
-  transform: translateY(97%) translateX(10vw);
-  padding: 1%;
-  background-color: var(--color-background-tertiary);
-}
-.sec4 {
-  transform: translateY(98%) translateX(10vw);
-  padding: 1%;
-  background-color: var(--color-background-secondary);
-}
-.sec5 {
-  transform: translateY(99%) translateX(10vw);
-  padding: 1%;
   background-color: var(--color-background-primary);
 }
+
 .active {
   display: block;
   transform: translateY(5%) translateX(10vw);
-  
+}
+
+.activeUp {
+  display: block;
+  transform: translateX(92vw);
 }
 
 .profession {

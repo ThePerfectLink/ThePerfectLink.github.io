@@ -1,4 +1,7 @@
 var canvas = document.getElementById('ctx');
+
+import './app.js'
+import ColorTransition from './app.js';
 import './js/OrbitControls.js';
 
 // -- Start initialization of environment --
@@ -62,24 +65,38 @@ class Planet {
         this.endColor = new THREE.Color(Math.max(color1,color2));
         this.colorDif = this.endColor - this.baseColor;
         this.blockArray = new Array();
+        this.colorChange = function() {
+            for (let i=0; i<this.blockArray.length; i++) {
+                for(let j = 0; j<this.blockArray[i].length; j++) {
+                    if( this.blockArray[i][j]) {
+                        for(let k = 0; k<this.blockArray[i][j].length; k++) {
+                            if(this.blockArray[i][j][k]) {
+                                this.blockArray[i][j][k].material.color.set(new THREE.Color().lerpColors(
+                                    this.baseColor,this.endColor,((i)+(j)+(k))/(size*3)));
+                            }
+                        }
+                    }
+                }
+            }
+        };
         this.focus = false
         this.radius = size/2;
         this.group = new THREE.Group();
         this.center = getCenter(vector.x, vector.y, vector.z, size);
         this.rotation = rotation;
         for(let i = vector.x; i < size+vector.x; i++) {
-            this.blockArray[i] = new Array();
+            this.blockArray[Math.round(i-vector.x)] = new Array();
             for(let j = vector.y; j < size+vector.y; j++) {
-                this.blockArray[i][j] = new Array();
+                this.blockArray[Math.round(i-vector.x)][Math.round(j-vector.y)] = new Array();
                 for(let k = vector.z; k < size+vector.z; k++) {
                     let tempVecDist = new THREE.Vector3(i,j,k).distanceTo(this.center);
                     if(tempVecDist <= size/2 && tempVecDist > size/2 - 1) { 
                         material = new THREE.MeshToonMaterial({ color: new THREE.Color().lerpColors(
                             this.baseColor,this.endColor,((i-vector.x)+(j-vector.y)+(k-vector.z))/(size*3))
                         });
-                        this.blockArray[i][j][k] = new THREE.Mesh(geometry, material);
-                        this.blockArray[i][j][k].position.set(i,j,k);
-                        this.group.add(this.blockArray[i][j][k]);
+                        this.blockArray[Math.round(i-vector.x)][Math.round(j-vector.y)][Math.round(k-vector.z)] = new THREE.Mesh(geometry, material);
+                        this.blockArray[Math.round(i-vector.x)][Math.round(j-vector.y)][Math.round(k-vector.z)].position.set(i,j,k);
+                        this.group.add(this.blockArray[Math.round(i-vector.x)][Math.round(j-vector.y)][Math.round(k-vector.z)]);
                     }
                 }
             }
@@ -90,6 +107,8 @@ class Planet {
         scene.add(this.group);
     }
 }
+
+
 
 class Star {
     constructor() {
@@ -115,19 +134,37 @@ export default class SceneTransitions {
             globalCamera.controls.enableRotate=false;
         }
     }
-}
 
-export default class ColorSwitch {
-    static colorSwitch() {
-        
+    static colorSwitch(color, id) {
+        if(id[0] == "0") {
+            if(id[1] == "primary") {
+                lights[0].color.setHex(`0x${color.substring(1)}`)
+                lights[3].color.setHex(`0x${color.substring(1)}`)
+            } else if(id[1] == "secondary") {
+                lights[1].color.setHex(`0x${color.substring(1)}`)
+                lights[4].color.setHex(`0x${color.substring(1)}`)
+            } else {
+                lights[2].color.setHex(`0x${color.substring(1)}`)
+                lights[5].color.setHex(`0x${color.substring(1)}`)
+            }
+        } else {
+            if(id[1] == "primary") {
+                planets[id[0]].baseColor.setHex(`0x${color.substring(1)}`)
+                planets[id[0]].colorChange();
+            } else {
+                planets[id[0]].endColor.setHex(`0x${color.substring(1)}`)
+                planets[id[0]].colorChange();
+            }
+        }
     }
 }
+
 
 // -- End class declarations --
 // -- Start initialization of objects --
 
 let planets = [
-    new Planet(sunSize, new THREE.Vector3(0,0,0),0xF6F890,0xF8C690, 0),
+    new Planet(sunSize, new THREE.Vector3(0,0,0),0xFFFFFF,0xFFFFFF, 0),
     new Planet(sunSize*.24, new THREE.Vector3(100,(sunSize/2)-(sunSize*.24)/2,100),0x02a2ff,0x0224ff, 0.0007),
     new Planet(sunSize*.40, new THREE.Vector3(200,(sunSize/2)-(sunSize*.40)/2,-200),0xff3c19,0xffaf19, 0.0009),
     new Planet(sunSize*.30, new THREE.Vector3(300,(sunSize/2)-(sunSize*.30)/2,-300),0x0dff7a,0x8877f3, 0.00135),
@@ -232,6 +269,7 @@ window.addEventListener( 'mousedown', event => {
             }
         }
         globalCamera.setFocus(planets[closest]);
+        ColorTransition(closest);
         if(globalCamera.focus == planets[0]) {
             globalCamera.controls.autoRotate=true;
         } else {
