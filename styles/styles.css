@@ -163,8 +163,8 @@ header {
 
 .active {
   display: block;
-  -webkit-transform: translateY(5%) translateX(10vw);
-          transform: translateY(5%) translateX(10vw);
+  -webkit-transform: translateY(75%) translateX(10vw);
+          transform: translateY(75%) translateX(10vw);
 }
 
 .activeUp {
@@ -173,10 +173,45 @@ header {
           transform: translateX(92vw);
 }
 
+.present {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 35%;
+}
+
 .profession {
   display: inline-block;
-  -webkit-animation: fadeIn 2.5s infinite;
-          animation: fadeIn 2.5s infinite;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  opacity: 0;
+  -webkit-transition: -webkit-transform 0s;
+  transition: -webkit-transform 0s;
+  transition: transform 0s;
+  transition: transform 0s, -webkit-transform 0s;
+}
+
+.activeProf {
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  -webkit-transition: opacity .6s, -webkit-transform .8s;
+  transition: opacity .6s, -webkit-transform .8s;
+  transition: opacity .6s, transform .8s;
+  transition: opacity .6s, transform .8s, -webkit-transform .8s;
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+  opacity: 1;
+}
+
+.inactiveProf {
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
+  -webkit-transition: opacity .6s, -webkit-transform .8s;
+  transition: opacity .6s, -webkit-transform .8s;
+  transition: opacity .6s, transform .8s;
+  transition: opacity .6s, transform .8s, -webkit-transform .8s;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  opacity: 0;
 }
 
 .controls {
@@ -250,30 +285,20 @@ header {
     -webkit-transform: translateY(-100%);
             transform: translateY(-100%);
   }
-  15% {
+  30% {
     opacity: 0;
     -webkit-transform: translateY(-100%);
             transform: translateY(-100%);
   }
-  30% {
+  60% {
     opacity: 1;
     -webkit-transform: translateY(0%);
             transform: translateY(0%);
-  }
-  70% {
-    opacity: 1;
-    -webkit-transform: translateY(0%);
-            transform: translateY(0%);
-  }
-  85% {
-    opacity: 0;
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
   }
   100% {
-    opacity: 0;
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
   }
 }
 
@@ -283,22 +308,35 @@ header {
     -webkit-transform: translateY(-100%);
             transform: translateY(-100%);
   }
-  15% {
+  30% {
     opacity: 0;
     -webkit-transform: translateY(-100%);
             transform: translateY(-100%);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
   }
   30% {
     opacity: 1;
     -webkit-transform: translateY(0%);
             transform: translateY(0%);
   }
-  70% {
-    opacity: 1;
-    -webkit-transform: translateY(0%);
-            transform: translateY(0%);
-  }
-  85% {
+  60% {
     opacity: 0;
     -webkit-transform: translateY(100%);
             transform: translateY(100%);
@@ -307,28 +345,29 @@ header {
     opacity: 0;
     -webkit-transform: translateY(100%);
             transform: translateY(100%);
-  }
-}
-
-@-webkit-keyframes fadeOut {
-  100% {
-    opacity: 0;
-    text-transform: translateY(0%);
-  }
-  0% {
-    opacity: 1;
-    text-transform: translateY(-100%);
   }
 }
 
 @keyframes fadeOut {
-  100% {
-    opacity: 0;
-    text-transform: translateY(0%);
-  }
   0% {
     opacity: 1;
-    text-transform: translateY(-100%);
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  30% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  60% {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
   }
 }
 

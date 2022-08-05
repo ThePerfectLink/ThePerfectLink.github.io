@@ -1,16 +1,24 @@
 import SceneTransitions from './nav.js';
 
-let profession = document.querySelector(".profession");
-const professions = ["game designer", "backend developer", "frontend developer", "cool dude 👉😎👉",
-"game developer", "philosopher", "programmer", "good looking guy"];
-let professionNum = 0;
+var profession = document.querySelector(".profession");
+const professions = ["game designer", "backend developer", "frontend developer",
+"game developer", "philosopher", "programmer"];
+var professionNum = 0;
+var professionTxt = document.getElementsByClassName('profession')[0];
 var slider = document.querySelectorAll(".color");
 var resets = document.querySelectorAll(".reset");
 var colors = [];
 
-function transition() {
+function transitionIn() {
+    professionTxt.classList.remove('inactiveProf');
     profession.innerHTML = professions[professionNum%professions.length];
     professionNum++;
+    professionTxt.classList.add('activeProf');
+}
+
+function transitionOut() {
+    professionTxt.classList.remove('activeProf');
+    professionTxt.classList.add('inactiveProf');  
 }
 
 function colorChange(e) {
@@ -53,4 +61,8 @@ resets.forEach(function(currentBtn) {
     currentBtn.addEventListener('click', resetColor)
 })
 
-setInterval(transition, 2500);
+setInterval(transitionIn, 2400);
+setTimeout(function() {
+    setInterval(transitionOut, 2400);
+    console.log("hey");
+}, 1200);
