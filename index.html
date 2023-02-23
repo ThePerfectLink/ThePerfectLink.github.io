@@ -1,12 +1,13 @@
 <!doctype html>
 <html>
-<head>
+<head onload="translate">
 	<meta charset="utf-8">
 	<title>Portfolio</title>
 	<link rel="stylesheet" href="styles/styles.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link href='https://css.gg/css' rel='stylesheet'>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
@@ -22,22 +23,28 @@
 				<br>
 				<hr style="border: dotted 1px;" />
 				<h1 class="title"> Heya There! </h1>
-				<div>
-					<h3 class="present">
+				<div class="test" id="test2">
+					<ul>
+						<li></li>
+						<li class=test4>test</li>
+					</ul>
+					
+					<h3 class="present" class="test3" id="test4">
 						I hear you've been looking for a <span class="profession"> </span>
 					</h3>
 				</div>
-				
-				</p>
-				<p>
-					Thanks for landing on my portfolio! This is my interactive navigation page, as of right 
-					now it's not all that interactive, but that's soon to change when, you know, I get time. 
-					Until then have fun clicking around and watching the stars flicker! I also have some color
-					selectors setup for the planets so that I can procedurally generate them when you click
-					on the stars on the background. However, as of right now you'll just have to be content 
-					with color swapping the planets manually.
-				</p>
-				
+				<div class="subsection">
+					<ul>
+						Controls for the solar system:
+						<li><i class="gg-arrow-align-v icon"></i>&nbsp;|| Zoom camera in or out</li>
+						<li><i class="gg-mouse icon"></i>&nbsp;|| Zoom camera in or out</li>
+					</ul>
+				</div>
+				<div class="content">
+					<p>
+						You've stumbled upon my portfolio, here I've everything from my contact information, to my qualifications to my projects! Simply navigate the pages from the nav bar on the right. A procedural solar system generator using voxels is in the works to make this nav page a little more interesting. 
+					</p>
+				</div>
 			</section>
 			<section class="section sec2 about 2" id="about">
 				<div class="return"><i class="fa-solid fa-angle-down fa-2xl"></i></div>
@@ -47,6 +54,10 @@
 			<section class="section sec3 portfolio 3" id="portfolio">
 				<div class="return"><i class="fa-solid fa-angle-down fa-2xl"></i></div>
 				<br>
+				<div class="content">
+					<a href=./doesithavelungs.html>DoesItHaveLungs.com</a> 
+						Is a queryable database to find out whether or not a given animal has lungs
+				</div>>
 				<hr style="border: dotted 1px;"/>
 			</section>
 			<section class="section sec4 blogs 4" id="blog">
@@ -167,6 +178,7 @@
 
 	<script src="js/three.js"></script>
 	<script type="module" src="panels.js"></script>
+	<script type="module" src="translate.js"></script>
 	<script type="module" src="nav.js"></script>
 	<script type="module" src="app.js"></script>
 

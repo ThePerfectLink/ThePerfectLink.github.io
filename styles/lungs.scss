@@ -1,0 +1,33 @@
+$randomHeight: 70;
+$randomWidth: 100;
+
+*:not(script){
+    display: block;
+    text-align: center;
+    
+}
+body {
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,121,113,1) 24%, rgba(0,212,255,1) 100%);
+    color:aliceblue;
+    height: 97vh;
+}
+
+.content {
+    margin-top:12%;
+    scale:200%;
+}
+
+.snake {
+    display:flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+.andy {
+    position: absolute;
+    left: 1%;
+    top: 5%;
+    scale: 0.01;
+    z-index: 0;
+}

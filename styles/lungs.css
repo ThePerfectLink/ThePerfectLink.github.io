@@ -1,0 +1,36 @@
+*:not(script) {
+  display: block;
+  text-align: center;
+}
+
+body {
+  background: #020024;
+  background: -webkit-gradient(linear, left top, left bottom, from(#020024), color-stop(24%, #097971), to(#00d4ff));
+  background: linear-gradient(180deg, #020024 0%, #097971 24%, #00d4ff 100%);
+  color: aliceblue;
+  height: 97vh;
+}
+
+.content {
+  margin-top: 12%;
+  scale: 200%;
+}
+
+.snake {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 1;
+}
+
+.andy {
+  position: absolute;
+  left: 1%;
+  top: 5%;
+  scale: 0.01;
+  z-index: 0;
+}
+/*# sourceMappingURL=lungs.css.map */

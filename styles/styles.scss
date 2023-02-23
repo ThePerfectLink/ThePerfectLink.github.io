@@ -96,9 +96,12 @@ input[type=color]:active {
   background-color: var(--color-accent-secondary);
 }
 
-
-.row{
+.row {
   display:flex;
+}
+
+.icon {
+  
 }
 
 input[type=reset] {
@@ -141,9 +144,26 @@ header {
   background-color: var(--color-background-primary);
 }
 
+.subsection{
+  display:inline;
+  float:left;
+  margin: 1% 2%;
+  padding: 0% 1%;
+  max-width: 30%;
+  background-color: var(--color-background-secondary);
+}
+
+.content {
+  display:inline;
+}
+
 .active {
   display: block;
-  transform: translateY(75%) translateX(10vw);
+  transform: translateY(70%) translateX(10vw);
+}
+
+li {
+  display: flex;
 }
 
 .activeUp {
