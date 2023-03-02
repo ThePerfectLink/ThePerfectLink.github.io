@@ -164,10 +164,32 @@ header {
 .subsection {
   display: inline;
   float: left;
+  font-size: 1vmax;
   margin: 1% 2%;
   padding: 0% 1%;
   max-width: 30%;
   background-color: var(--color-background-secondary);
+}
+
+.subsection li {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
+  font-size: .8vmax;
+}
+
+.subsection .icon {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 5%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: .8vmax;
+  top: 0.2vmin;
 }
 
 .content {

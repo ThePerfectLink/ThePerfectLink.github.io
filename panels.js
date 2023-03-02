@@ -9,7 +9,6 @@ var slider = document.querySelectorAll(".color");
 var resets = document.querySelectorAll(".reset");
 var colors = [];
 
-var scope = "global";
 function transitionIn() {
     professionTxt.classList.remove('inactiveProf');
     profession.innerHTML = professions[professionNum%professions.length];
