@@ -5,6 +5,49 @@
   box-sizing: border-box;
   list-style: none; }
 
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--color-background-secondary);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--color-background-tertiary);
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-background-primary)
+} 
+
+@font-face {
+  font-family: "Monopixel";
+  src: url("../fonts/Emulator.ttf");
+}
+
+@font-face {
+  font-family: "GohuFont";
+  src: url("../fonts/gohufont-11.ttf");
+}
+
+@font-face {
+  font-family: "Philosopher";
+  src: url("../fonts/Philosopher-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Nikoleta";
+  src: url("../fonts/NIKOLETA.ttf");
+}
+
+
 :root {
   --color-background-primary: #212121;
   --color-background-secondary: #383838;
@@ -37,25 +80,28 @@ body {
 }
 
 .colorPicker {
-  min-height: 26vh;
+  min-height: 26vmin;
   width: 8%;
   position: absolute;
+  transform: translateY(-100%) translateX(92vw);
   transition: 0.8s;
   top: 0;
-  transform: translateY(-100%) translateX(92vw);
-  padding: 1%;
+  padding: 0% 1%;
   background-color: var(--color-background-primary);
   h4 {
-    font-size: 1.4vh;
+    font-size: 1.4vmin;
     text-align: center;
   }
 }
 
 .returnUp{
   position: absolute;
+  margin: 0;
+  padding: 0;
   width: 90%;
   bottom: 0;
   left: 5%;
+  border-top: 1px dotted;
   align-items: center;
   i {
     transform: translateY(5%) translateX(3vw);
@@ -74,7 +120,7 @@ input[type=color] {
   display: inline-block;
   border-radius: 30%;
   background-color: var(--color-background-secondary);
-  height: 3.5vh;
+  height: 3.5vmin;
   margin: 3%;
   width: 6vw;
   border: none;
@@ -101,7 +147,6 @@ input[type=color]:active {
 }
 
 
-
 input[type=reset] {
   position: absolute;  
   left: 1vw;  
@@ -109,7 +154,8 @@ input[type=reset] {
   display: inline-block;
   border-radius: 30%;
   background-color: var(--color-background-tertiary);
-  height: 3.6vh;
+  height: 3.6vmin;
+  font-size: 1vmin;
   width: 3vw;
   margin: 2%;
   border: none;
@@ -132,13 +178,16 @@ header {
 }
 
 .section {
-  min-height: 100vh;
+  min-height: 4vh;
+  max-height: 4vh;
   width: 80%;
   position: absolute;
-  transition: 0.8s;
-  top: 0;
-  transform: translateY(96%) translateX(10vw);
-  padding: 1%;
+  transition: all 0.8s;
+  top: 96vh;
+  transform: translateX(10vw);
+  padding: 0% 1%;
+  overflow-y:scroll;
+  z-index: 0;
   background-color: var(--color-background-primary);
 }
 
@@ -172,8 +221,12 @@ header {
 }
 
 .active {
+  z-index: 1;
   display: block;
-  transform: translateY(70%) translateX(10vw);
+  transform: translateX(10vw);
+  top: 70vh;
+  min-height: 30vh;
+  overflow-y: scroll;
 }
 
 li {
@@ -186,27 +239,44 @@ li {
 }
 
 .present {
+  display: grid;
   padding-top: 10px;
   padding-bottom: 10px;
-  margin-left: 35%;
+  text-align: center;
 }
 
 .profession {
-  display: inline-block;
-  transform: (translateY(+100%));
-  opacity: 0;
-  transition: transform 0s;
+  font-size: 5vh;
+  line-height: 100%;
+  width: auto;
+  height: 2em;
+  position: relative;
+  .bubble {
+    display:block;
+    overflow-wrap: break-word;
+    width: 100%;
+    height: 100%;
+    transition: opacity .6s, transform .8s;
+    position: absolute;
+    display: table;
+    p {
+      overflow-wrap: anywhere;
+      display: table-cell;
+      vertical-align: middle; 
+      text-align: center; 
+     }
+  }
+   
 }
+
 .activeProf {
   transition-timing-function: ease-out;
-  transition: opacity .6s, transform .8s;
   transform: (translateY(0%));
   opacity: 1;
 
 }
 .inactiveProf {
   transition-timing-function: ease-in;
-  transition: opacity .6s, transform .8s;
   transform: (translateY(100%));
   opacity: 0;
 }
@@ -228,7 +298,7 @@ li {
     z-index: 0;
     cursor: pointer;
     width: 1vw;
-    height: 4vh;
+    height: 5vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -279,10 +349,19 @@ li {
 
 //return
 .return {
-  background-color: white;
-  height: 0;
-  display: flex;
+  top: 0;
+  position: sticky;
+  display: grid;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+  padding-bottom: 1%;
+  width: 100%;
+  border-bottom: 1px dotted;
+  background-color: #1f1f1f94;
+  .i{
+    position: absolute;
+    background-color: white;
+    height: 0;
+    cursor: pointer;
+  }
 }

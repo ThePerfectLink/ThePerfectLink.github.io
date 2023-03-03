@@ -1,24 +1,26 @@
 import SceneTransitions from './nav.js';
 
-var profession = document.querySelector(".profession");
-const professions = ["game designer", "backend developer", "frontend developer",
-"game developer", "philosopher", "programmer"];
+var profession = document.querySelector("#profession");
+const professions = ["GAME DESIGNER", "BACKEND DEVELOPER", "FRONTEND DEVELOPER",
+"GAME DEVELOPER", "PHILOSOPHER", "SOFTWARE DEVELOPER"];
+const fonts = ["Monopixel", "Monospace", "Nikoleta", "Monospace", "Philosopher", "GohuFont"];
 var professionNum = 0;
-var professionTxt = document.getElementsByClassName('profession')[0];
+var professionTxt = document.getElementsByClassName('bubble')[0];
 var slider = document.querySelectorAll(".color");
 var resets = document.querySelectorAll(".reset");
 var colors = [];
 
 function transitionIn() {
     professionTxt.classList.remove('inactiveProf');
-    profession.innerHTML = professions[professionNum%professions.length];
+    profession.innerText = professions[professionNum%professions.length];
+    profession.style.fontFamily = fonts[professionNum%professions.length];
     professionTxt.classList.add('activeProf');
     professionNum++;
 }
 
 function transitionOut() {
     professionTxt.classList.remove('activeProf');
-    professionTxt.classList.add('inactiveProf');  
+    professionTxt.classList.add('inactiveProf');     
 }
 
 function colorChange(e) {
