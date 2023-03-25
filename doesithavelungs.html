@@ -8,12 +8,25 @@
         <a class="andy" href="./andy.png"><img src="./andy.png"/></a>
         <div class="content">
             <div class="text">
-                <h1 class="title" >DoesItHaveLungs.com</h1>
-                <h3>Is currently under construction</h3>
-                <h5 onclick="searchAnimal"> but if you were wondering; yes, snakes do indeed have a lung</h5>
-                <button onclick="searchAnimal()"> Search </button>
+                <h1 class="title" >Does It Have Lungs</h1>
+                <button id="searchButton" onclick="searchAnimal(self)"> Search </button>
+                <div id="autocomplete">
+                    <input type="text" id="searchBox" onfocusout = "document.getElementById('suggestionBox').classList.remove('active')" 
+                        onkeypress="animalSuggestion(this)" onfocus = "document.getElementById('suggestionBox').classList.add('active')">
+                    <div id="suggestionBox">
+                        
+                    </div>
+                </div>
             </div>
-            <a class="snake" href="https://en.wikipedia.org/wiki/Snake#Internal_organs"><img src="snakeLungs.jpg" alt="It's one lung, but it checks out"></a>
+            <div id="results">
+                
+            </div>
+        </div>
+        <div id="footer">
+            <a href="">About</a>
+            <a href="">Contact</a>
+            <a href="">More Contact</a>
+            <a href="">Contact</a>
         </div>
     </body>
 </html>
