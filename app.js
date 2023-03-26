@@ -4,7 +4,8 @@ import SceneTransitions from './nav.js';
 const sections = document.querySelectorAll(".section");
 const sectBtns = document.querySelectorAll(".controls");
 const sectBtn = document.querySelectorAll(".control");
-const sectRtn = document.querySelectorAll(".return");
+const sectRtn = document.querySelectorAll(".fa-angle-down");
+const sectExp = document.querySelectorAll(".fa-angle-up");
 const sectIcon = document.querySelectorAll(".navicon");
 const allSections = document.querySelector(".main-content");
 const colorRtn = document.querySelectorAll(".returnUpwards");
@@ -47,6 +48,7 @@ function PageTransitions(){
             //hide other sections
             sections.forEach((section)=>{
                 section.classList.remove('active');
+                section.classList.remove('expanded');
             });
 
             const element = document.getElementById(id);
@@ -55,6 +57,13 @@ function PageTransitions(){
         }
         
     });
+    //Expand sections
+
+    for(let i = 0; i < sectExp.length; i++) {
+        sectExp[i].addEventListener('click', function(){
+            sectExp[i].parentElement.parentElement.classList.add('expanded');
+        });
+    }
 
     //deactivate content
     for(let i = 0; i < sectRtn.length; i++) {
@@ -66,6 +75,7 @@ function PageTransitions(){
             SceneTransitions.sceneSwitch(0);
             sections.forEach((section)=>{
                 section.classList.remove('active');
+                section.classList.remove('expanded');
             });
         });
     }

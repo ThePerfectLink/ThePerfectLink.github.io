@@ -107,6 +107,7 @@ body {
 
 .returnUp {
   position: absolute;
+  cursor: pointer;
   margin: 0;
   padding: 0;
   width: 90%;
@@ -248,11 +249,16 @@ header {
 .active {
   z-index: 1;
   display: block;
-  -webkit-transform: translateX(10vw);
-          transform: translateX(10vw);
   top: 70vh;
   min-height: 30vh;
   overflow-y: scroll;
+}
+
+.expanded {
+  min-height: 70vh;
+  top: 70vh;
+  -webkit-transform: translateY(-40vh) translateX(10vw);
+          transform: translateY(-40vh) translateX(10vw);
 }
 
 li {
@@ -480,11 +486,12 @@ li {
   top: 0;
   position: -webkit-sticky;
   position: sticky;
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -494,10 +501,67 @@ li {
   background-color: #1f1f1f94;
 }
 
-.return .i {
-  position: absolute;
+.return i {
+  z-index: 5;
+  cursor: pointer;
   background-color: white;
   height: 0;
-  cursor: pointer;
+}
+
+.return .fa-angle-up {
+  float: right;
+}
+
+#portfolio h3 {
+  margin-left: 30%;
+}
+
+#portfolio .leftContent {
+  float: left;
+}
+
+#portfolio .rightContent {
+  float: right;
+}
+
+#portfolio .leftContent, #portfolio .rightContent {
+  width: 50%;
+}
+
+#portfolio .leftContent div, #portfolio .rightContent div {
+  margin-bottom: 4%;
+  float: left;
+}
+
+#portfolio .leftContent div section, #portfolio .rightContent div section {
+  float: left;
+  margin-right: 3%;
+}
+
+#portfolio .leftContent div section a, #portfolio .rightContent div section a {
+  width: 15vh;
+  height: 11vh;
+}
+
+#portfolio .leftContent div section a img, #portfolio .rightContent div section a img {
+  width: 15vh;
+  height: 10vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 4px inset white;
+}
+
+#portfolio .leftContent div section a p, #portfolio .rightContent div section a p {
+  margin: 0;
+  font-size: small;
+  color: grey;
+  text-align: center;
+  font-style: italic;
+}
+
+#portfolio .leftContent div p, #portfolio .rightContent div p {
+  margin: 0% 10px;
+  text-align: justify;
+  text-justify: inter-word;
 }
 /*# sourceMappingURL=styles.css.map */

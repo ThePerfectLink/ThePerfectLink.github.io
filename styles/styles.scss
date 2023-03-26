@@ -96,6 +96,7 @@ body {
 
 .returnUp{
   position: absolute;
+  cursor: pointer;
   margin: 0;
   padding: 0;
   width: 90%;
@@ -223,10 +224,15 @@ header {
 .active {
   z-index: 1;
   display: block;
-  transform: translateX(10vw);
   top: 70vh;
   min-height: 30vh;
   overflow-y: scroll;
+}
+
+.expanded{
+  min-height: 70vh;
+  top: 70vh;
+  transform: translateY(-40vh) translateX(10vw);
 }
 
 li {
@@ -351,17 +357,67 @@ li {
 .return {
   top: 0;
   position: sticky;
-  display: grid;
-  justify-content: center;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   padding-bottom: 1%;
   width: 100%;
   border-bottom: 1px dotted;
   background-color: #1f1f1f94;
-  .i{
-    position: absolute;
+  i{
+    z-index: 5;
+    cursor: pointer;
     background-color: white;
     height: 0;
-    cursor: pointer;
+  }
+  .fa-angle-up {
+    float: right;
+  }
+}
+
+#portfolio {
+  h3 {
+    margin-left: 30%;
+  }
+  .leftContent {
+    float: left;
+  }
+  .rightContent {
+    float: right;
+  }
+
+  .leftContent, .rightContent{
+    width:50%;
+    div {
+      margin-bottom: 4%;
+      float:left;
+      section {
+        float:left;
+        margin-right: 3%;
+        a {
+          width: 15vh;
+          height: 11vh;
+          img{
+            width: 15vh;
+            height: 10vh;
+            object-fit: cover;
+            border: 4px inset white;
+          }
+          p {
+            margin: 0;
+            font-size: small;
+            color: grey;
+            text-align: center;
+            font-style: italic;
+          }
+        }
+      
+      }
+      p {
+        margin: 0% 10px;
+        text-align: justify;
+        text-justify: inter-word;
+      }
+    }
   }
 }
