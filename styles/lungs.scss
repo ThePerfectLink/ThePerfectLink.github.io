@@ -20,7 +20,7 @@ body {
 }
 
 .content {
-    padding-top: 5vh;
+    padding-top: 1vh;
     size: 200%;
 }
 
@@ -38,13 +38,13 @@ body {
     display: block;
     width: 100px;
     margin: 0% auto;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 
 
 #autocomplete {
-    margin-top: 0%;
+    margin-top: 1%;
     display:inline-block;
     width: 30%;
     height: 30%;
@@ -61,10 +61,12 @@ body {
     }
 
     #searchBox {
-        margin: 0 auto;
-        width: 95%;
+        margin: 0 0;
+        width: 100%;
         height: 1.1em;
         font-size: 1.3em;
+        border: 0;
+        padding: 0;
     }
     
     #suggestionBox {
@@ -72,11 +74,12 @@ body {
         background-color: azure;
         color:black;
         height: auto;
-        width: 95%;
+        width: 28.5%;
         min-height: 10vh;
         max-height: 40vh;
         overflow-x: hidden;
         overflow-y: auto;
+        margin-left:-.05%;
         padding:.8%;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
@@ -112,16 +115,20 @@ body {
         
     }
     .active {
-        display: inline-block !important;
+        display: block !important;
+        position:absolute;
+    }
+}
+#results {
+    margin-top: 2%;
+    #imgResult {
+        display: inline-block;
+        justify-content: center;
+        max-height: 30vh;
+        width: auto;
     }
 }
 
-#imgResult {
-    display: inline-block;
-    justify-content: center;
-    max-height: 30vh;
-    width: auto;
-}
 
 img {
     height: auto;
