@@ -87,6 +87,7 @@ async function searchAnimal() {
 
     const printAddress = async () => {
         let results = document.getElementById("results");
+        results.innerHTML="";
         const wiki = await wikiHTMLResponse;
         wikiImgResponse.setTerm1(data[0].name.replace(/ +/g, "_"));
         wikiImgResponse.setTerm2(data[0].taxonomy.genus.replace(/ +/g, "_"));
