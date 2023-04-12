@@ -9,11 +9,12 @@
         <div class="content" >
             <div class="text">
                 <h1 class="title">Does It Have Lungs</h1>
-                <button id="searchButton" onclick="searchAnimal(self)"> Search </button>
+                
                 <div id="autocomplete" onfocusin = "if(document.getElementById('suggestionBox')) {document.getElementById('suggestionBox').classList.add('active')}" onfocusout="if(document.getElementById('suggestionBox')) 
                 {document.getElementById('suggestionBox').classList.remove('active')}">
                     <input type="text" name="search" id="searchBox" onkeypress="textGrab(this.value, event)">
                 </div>
+                <button id="searchButton" onclick="searchAnimal(self)"> Search </button>
             </div>
             <div id="results">
                 

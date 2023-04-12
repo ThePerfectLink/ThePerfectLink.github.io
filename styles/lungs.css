@@ -1,5 +1,4 @@
 *:not(script) {
-  display: block;
   text-align: center;
 }
 
@@ -14,12 +13,13 @@ body {
   background: linear-gradient(180deg, #020024 0%, #097971 24%, #00d4ff 100%);
   color: aliceblue;
   margin: 0%;
-  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
 }
 
 .content {
   padding-top: 1vh;
-  size: 200%;
 }
 
 .title {
@@ -30,19 +30,21 @@ body {
   -webkit-text-fill-color: transparent;
   font-family: SpotMonkey;
   margin: 0%;
+  font-size: 5vmax;
 }
 
 #searchButton {
   display: block;
-  width: 100px;
+  width: 10vmax;
   margin: 0% auto;
-  margin-top: 5%;
+  margin-top: 2vh;
+  font-size: 2vmax;
 }
 
 #autocomplete {
   margin-top: 1%;
   display: inline-block;
-  width: 30%;
+  width: 30vmax;
   height: 30%;
   /* Track */
   /* Handle */
@@ -59,10 +61,11 @@ body {
 }
 
 #autocomplete #searchBox {
+  display: inline;
   margin: 0 0;
   width: 100%;
   height: 1.1em;
-  font-size: 1.3em;
+  font-size: 1.4em;
   border: 0;
   padding: 0;
 }
@@ -72,19 +75,18 @@ body {
   background-color: azure;
   color: black;
   height: auto;
-  width: 28.5%;
+  width: 28vmax;
   min-height: 10vh;
   max-height: 40vh;
   overflow-x: hidden;
   overflow-y: auto;
-  margin-left: -.05%;
-  padding: .8%;
+  padding: 1vmax;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 
 #autocomplete #suggestionBox .suggestion {
-  margin: 0 auto;
+  margin: 0 0;
   display: table;
   width: 100%;
   vertical-align: top;
@@ -93,19 +95,19 @@ body {
 #autocomplete #suggestionBox .suggestion img {
   display: table-cell;
   width: 100%;
-  height: 10vh;
+  height: 9vmax;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
 #autocomplete #suggestionBox .suggestion p {
+  padding: 0;
   margin: 0;
-  width: 70%;
+  width: 60%;
   vertical-align: middle;
   display: table-cell;
   font-size: 1em;
   text-align: center;
-  vertical-align: middle;
 }
 
 #autocomplete #suggestionBox .suggestion:hover {
@@ -119,8 +121,7 @@ body {
 }
 
 #results {
-  min-height: 60vh;
-  margin-top: 2%;
+  min-height: 70vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -145,7 +146,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  max-height: 50%;
+  height: 25vh;
   width: auto;
 }
 

@@ -2,7 +2,6 @@ $randomHeight: 70;
 $randomWidth: 100;
 
 *:not(script){
-    display: block;
     text-align: center;
 }
 
@@ -16,29 +15,31 @@ body {
     background: linear-gradient(180deg, rgb(2, 0, 36) 0%, rgba(9,121,113,1) 24%, rgba(0,212,255,1) 100%);
     color:aliceblue;
     margin: 0%;
-    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
 }
 
 .content {
     padding-top: 1vh;
-    size: 200%;
 }
 
 .title {
-    //color: rgb(2,0,36);
     background: linear-gradient(180deg, rgb(247, 168, 0) 0%, rgb(204, 70, 8) 83%, rgb(0, 0, 0) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: SpotMonkey;
     margin: 0%;
+    font-size: 5vmax;
 }
 
 #searchButton {
     display: block;
-    width: 100px;
+    width: 10vmax;
     margin: 0% auto;
-    margin-top: 5%;
+    margin-top: 2vh;
+    font-size: 2vmax;
 }
 
 
@@ -46,7 +47,7 @@ body {
 #autocomplete {
     margin-top: 1%;
     display:inline-block;
-    width: 30%;
+    width: 30vmax;
     height: 30%;
      /* Track */
     ::-webkit-scrollbar-track {
@@ -61,10 +62,11 @@ body {
     }
 
     #searchBox {
+        display: inline;
         margin: 0 0;
-        width: 100%;
+        width:100%;
         height: 1.1em;
-        font-size: 1.3em;
+        font-size: 1.4em;
         border: 0;
         padding: 0;
     }
@@ -74,37 +76,37 @@ body {
         background-color: azure;
         color:black;
         height: auto;
-        width: 28.5%;
+        width: 28vmax;
         min-height: 10vh;
         max-height: 40vh;
         overflow-x: hidden;
         overflow-y: auto;
-        margin-left:-.05%;
-        padding:.8%;
+        //margin-left: -1vmax;
+        padding:1vmax;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
 
        
         
         .suggestion{
-            margin:0 auto;
+            margin:0 0;
             display: table;
             width: 100%;
             vertical-align: top;
             img {
                 display: table-cell;
                 width: 100%;
-                height: 10vh;
+                height: 9vmax;
                 object-fit: cover;
             }
             p {
+                padding: 0;
                 margin: 0;
-                width:70%;
+                width: 60%;
                 vertical-align: middle;
                 display: table-cell;
                 font-size: 1em;
                 text-align: center;
-                vertical-align: middle;
             }
             
         }
@@ -120,8 +122,7 @@ body {
     }
 }
 #results {
-    min-height: 60vh;
-    margin-top: 2%;
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -132,7 +133,7 @@ body {
     }
     #imgResult {
         justify-content: center;
-        max-height: 50%;
+        height: 25vh;
         width: auto;
     }
 }

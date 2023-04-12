@@ -161,8 +161,11 @@ async function animalSuggestion(currentText) {
     searchDiv.id ="suggestionBox";
     await ninjaResponse.setTerm(currentText);
     response = await ninjaResponse.search();
-    if(response) {
-        for(let responseI = 0, resultI = 0; resultI < 8 && responseI < response.length && searchBox.value == currentText; responseI++) {
+    if(response && currentText != "") {
+        for(let responseI = 0, resultI = 0; resultI < 8 && responseI < response.length; responseI++) {
+            if (searchBox.value != currentText){
+                return;
+            }
             if(response[responseI].taxonomy.genus && response[responseI].name) {
                 wikiImgResponse.setTerm1(response[responseI].name.replace(/ +/g, "_"))
                 wikiImgResponse.setTerm2(response[responseI].taxonomy.genus.replace(/ +/g, "_"));
