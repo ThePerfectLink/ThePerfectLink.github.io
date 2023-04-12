@@ -12,7 +12,7 @@
                 <button id="searchButton" onclick="searchAnimal(self)"> Search </button>
                 <div id="autocomplete" onfocusin = "if(document.getElementById('suggestionBox')) {document.getElementById('suggestionBox').classList.add('active')}" onfocusout="if(document.getElementById('suggestionBox')) 
                 {document.getElementById('suggestionBox').classList.remove('active')}">
-                    <input type="text" name="search" id="searchBox" async onkeypress="animalSuggestion(event)">
+                    <input type="text" name="search" id="searchBox" onkeypress="textGrab(this.value, event)">
                 </div>
             </div>
             <div id="results">

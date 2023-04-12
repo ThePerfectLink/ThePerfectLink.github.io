@@ -144,21 +144,25 @@ async function searchLung(data) {
     return "Has no Lungs";
 }
 
-async function animalSuggestion(e) {
+async function textGrab(value, e) {
     if(e.keyCode === 13){ 
         searchAnimal();
-        return;
+    } else {
+        animalSuggestion(value+String.fromCharCode(e.keyCode))
     }
+}
+
+async function animalSuggestion(currentText) {
     const search = document.getElementById("autocomplete");
     const searchBox = document.getElementById("searchBox");
     //let textResponse;
     let imgResponse;
     let searchDiv = document.createElement('div');
     searchDiv.id ="suggestionBox";
-    await ninjaResponse.setTerm(searchBox.value);
+    await ninjaResponse.setTerm(currentText);
     response = await ninjaResponse.search();
     if(response) {
-        for(let responseI = 0, resultI = 0; resultI < 8 && responseI < response.length; responseI++) {
+        for(let responseI = 0, resultI = 0; resultI < 8 && responseI < response.length && searchBox.value == currentText; responseI++) {
             if(response[responseI].taxonomy.genus && response[responseI].name) {
                 wikiImgResponse.setTerm1(response[responseI].name.replace(/ +/g, "_"))
                 wikiImgResponse.setTerm2(response[responseI].taxonomy.genus.replace(/ +/g, "_"));

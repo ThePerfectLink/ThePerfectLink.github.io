@@ -119,15 +119,33 @@ body {
 }
 
 #results {
+  min-height: 60vh;
   margin-top: 2%;
-}
-
-#results #imgResult {
-  display: inline-block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  max-height: 30vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#results * {
+  display: block;
+  font-size: 3.5vh;
+}
+
+#results #imgResult {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-height: 50%;
   width: auto;
 }
 
