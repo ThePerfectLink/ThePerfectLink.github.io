@@ -76,7 +76,7 @@ body {
 }
 
 .colorPicker {
-  min-height: 26vmin;
+  min-height: 20vmin;
   width: 8%;
   position: absolute;
   transform: translateY(-100%) translateX(92vw);
@@ -180,7 +180,7 @@ header {
   width: 80%;
   position: absolute;
   transition: all 0.8s;
-  top: 96vh;
+  bottom: 0vh;
   transform: translateX(10vw);
   padding: 0% 1%;
   overflow-y: scroll;
@@ -269,8 +269,7 @@ header {
 .active {
   z-index: 1;
   display: block;
-  top: 80vmin;
-  min-height: 20vmin;
+  min-height: 12em;
   overflow-y: auto;
 }
 .active .return h2 {
@@ -284,9 +283,7 @@ header {
 }
 
 .expanded {
-  min-height: 70vh;
-  top: 70vh;
-  transform: translateY(-40vh) translateX(10vw);
+  min-height: 60vh;
 }
 
 li {

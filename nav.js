@@ -169,7 +169,11 @@ class Star {
 
 export default class SceneTransitions {
     static sceneSwitch(planetInt){
-        globalCamera.setFocus(planets[parseInt(planetInt)]);
+        if(planetInt == 0) {
+            globalCamera.setFocus(star);
+        } else {
+            globalCamera.setFocus(planets[parseInt(planetInt-1)]);
+        }
     }
 
     static colorSwitch(color, id) {
