@@ -66,5 +66,4 @@ resets.forEach(function(currentBtn) {
 setInterval(transitionIn, 2400);
 setTimeout(function() {
     setInterval(transitionOut, 2400);
-    console.log("hey");
 }, 1200);

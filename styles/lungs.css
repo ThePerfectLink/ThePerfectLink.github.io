@@ -6,11 +6,9 @@
   font-family: "SpotMonkey";
   src: url("../fonts/SpotMonkey-zLO0.ttf");
 }
-
 body {
-  background: #020024;
-  background: -webkit-gradient(linear, left top, left bottom, from(#020024), color-stop(24%, #097971), to(#00d4ff));
-  background: linear-gradient(180deg, #020024 0%, #097971 24%, #00d4ff 100%);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(180deg, rgb(2, 0, 36) 0%, rgb(9, 121, 113) 24%, rgb(0, 212, 255) 100%);
   color: aliceblue;
   margin: 0%;
   min-height: 100vh;
@@ -23,8 +21,7 @@ body {
 }
 
 .title {
-  background: -webkit-gradient(linear, left top, left bottom, from(#f7a800), color-stop(83%, #cc4608), to(black));
-  background: linear-gradient(180deg, #f7a800 0%, #cc4608 83%, black 100%);
+  background: linear-gradient(180deg, rgb(247, 168, 0) 0%, rgb(204, 70, 8) 83%, rgb(0, 0, 0) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -49,17 +46,14 @@ body {
   /* Track */
   /* Handle */
 }
-
 #autocomplete ::-webkit-scrollbar-track {
   background-color: azure !important;
   border-radius: 3px !important;
 }
-
 #autocomplete ::-webkit-scrollbar-thumb {
   background-color: azure !important;
   border-radius: 3px !important;
 }
-
 #autocomplete #searchBox {
   display: inline;
   margin: 0 0;
@@ -69,7 +63,6 @@ body {
   border: 0;
   padding: 0;
 }
-
 #autocomplete #suggestionBox {
   display: none;
   background-color: azure;
@@ -84,14 +77,12 @@ body {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-
 #autocomplete #suggestionBox .suggestion {
   margin: 0 0;
   display: table;
   width: 100%;
   vertical-align: top;
 }
-
 #autocomplete #suggestionBox .suggestion img {
   display: table-cell;
   width: 100%;
@@ -99,7 +90,6 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
 }
-
 #autocomplete #suggestionBox .suggestion p {
   padding: 0;
   margin: 0;
@@ -109,12 +99,10 @@ body {
   font-size: 1em;
   text-align: center;
 }
-
 #autocomplete #suggestionBox .suggestion:hover {
   background-color: lightgray;
   cursor: pointer;
 }
-
 #autocomplete .active {
   display: block !important;
   position: absolute;
@@ -122,30 +110,17 @@ body {
 
 #results {
   min-height: 70vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
 #results * {
   display: block;
   font-size: 3.5vh;
 }
-
 #results #imgResult {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   height: 25vh;
   width: auto;
 }
@@ -164,17 +139,13 @@ img {
 
 .text {
   text-align: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   font-size: 2.5vw;
 }
 
 #footer {
-  background-color: #020024;
+  background-color: rgb(2, 0, 36);
   display: block;
   position: absolute;
   width: 100%;
@@ -183,7 +154,6 @@ img {
   padding-top: 1%;
   border-top: 2px solid black;
 }
-
 #footer a {
   font-size: 1.3em;
   font-family: monospace;
@@ -191,5 +161,4 @@ img {
   margin-left: 2%;
   margin-right: 2%;
   color: aliceblue;
-}
-/*# sourceMappingURL=lungs.css.map */
+}/*# sourceMappingURL=lungs.css.map */

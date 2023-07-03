@@ -18,43 +18,56 @@
 	</header>
 	<main>
 		<div class="content">
-			<section class="section sec1 home 1" id="home">
+			<section class="section sec1 home 0" id="home">
 				<div class="return">
 					<br>
+					<h2>Home</h2>
 					<i class="fa-solid fa-angle-down fa-2xl"></i>
-				</div>
-				<div id="present">
-					<h3 class="present" class="test3" id="test4">I Hear You've Been Looking For A </h3>
-						
-					<div class="profession">
-						<div class="bubble">
-							<p id="profession"></p>
-						</div>
-					</div>
 				</div>
 				
-				<div class="subsection">
-					<ul>
-						Controls for the solar system:
-						<li><span class="icon"><i class="fa-solid fa-arrows-up-down"></i></span>&nbsp;|| Zoom camera in or out from planet</li>
-						<li><span class="icon"><i class="fa-solid fa-arrow-pointer"></i></span>&nbsp;|| Center on planet</li>
-					</ul>
-				</div>
 				<div class="content">
-					<p>
-						You've stumbled upon my portfolio, here I've everything from my contact information, to my qualifications, to my projects! Simply navigate the pages from the nav bar on the right. A procedural solar system generator using voxels is in the works to make this nav page a little more interesting.
-					</p>
+					<div class="subsection">
+						<ul class="systemControls">
+							Controls for the solar system:
+							<li><span class="icon"><i class="fa-solid fa-arrows-up-down"></i></span>&nbsp;|| Zoom camera in or out from planet</li>
+							<li><span class="icon"><i class="fa-solid fa-arrow-pointer"></i></span>&nbsp;|| Center on planet</li>
+						</ul>
+					</div>
+					This little solar system isn't very interactive right now, but it is highly optimized. It runs on the ThreeJS 
+					framework and uses about 600 draws per frame despite its numerous objects. As of right now, you can only 
+					click around on the planets and change the colours of them as well as the light source of the main star.
+					<br><br>
+					Procedural satellites are coming soon!
 				</div>
 			</section>
-			<section class="section sec2 about 2" id="about">
+			<section class="section sec2 about 1" id="about">
 				<div class="return">
 					<br>
+					<h2>About Me</h2>
 					<i class="fa-solid fa-angle-down fa-2xl"></i>
 				</div>
+				<div class="content">
+
+					<div id="present">
+						<h3 class="present" class="test3" id="test4">Welcome to my website, I hear you've been looking for a </h3>
+							
+						<div class="profession">
+							<div class="bubble">
+								<p id="profession"></p>
+							</div>
+						</div>
+					</div>
+					My name is Chris Artzoglou, I'm a UBC graduate specializing in computer science and philosophy.
+                    A strange combo perhaps, but also one that gives me a unique perspective in the tech industry.
+                    I tend to work from a user perspective and attempt to look at projects holistically when possible.
+                    As such I tend to be most beneficial in position with UI/UX input and leadership roles where 
+                    I can coordinate with interdisciplinary heads.
+				</div>
 			</section>
-			<section class="section sec3 portfolio 3" id="portfolio">
+			<section class="section sec3 portfolio 2" id="portfolio">
 				<div class="return">
 					<br>
+					<h2>Projects</h2>
 					<i class="fa-solid fa-angle-up fa-2xl"></i>
 					<i class="fa-solid fa-angle-down fa-2xl"></i>
 				</div>
@@ -78,7 +91,7 @@
 						</section>
 						<p>
 							A website I work on as the lead full-stack engineer. Initially coded by a particularly adept webmaster, this website is meant to connect students and wayward STEM graduates with STEM experts and resources in order to help guide them through their career. 
-							I have since taken over as the lead web dev, and do both frontend and backend work to implement new features on my freetime.
+                            I have since taken over as the lead web dev, and do both frontend and backend work to implement new features on my free time.
 						</p>
 					</div>
 					<div>
@@ -93,8 +106,8 @@
 						</section>
 						<p>
 							A pair of websites I worked on while working at the UBC, these are the main sites for their corresponding departments. Made to look very similar to one another, I continued and improved upon them during my brief stint at UBC. Redesigning many pages
-							in order to improve user experience. I also did some brief video editing for the websites and widget development, said wdgets are still in use on the front page. Which, considering the fact that these sites went through frequent redesigns, is pretty
-							good. Both of the sites were made in Wordpress.
+                            in order to improve user experience. I also did some brief video editing for the websites and widget development, said widgets are still in use on the front page. Which, considering the fact that these sites went through frequent redesigns, is pretty
+                            good. Both of the sites were made in WordPress.
 						</p>
 					</div>
 				</div>
@@ -114,16 +127,25 @@
 					</div>
 				</div>
 			</section>
-			<section class="section sec4 blogs 4" id="blog">
+			<section class="section sec4 blogs 3" id="blog">
 				<div class="return">
 					<br>
+					<h2>Blog</h2>
 					<i class="fa-solid fa-angle-down fa-2xl"></i>
 				</div>
 			</section>
-			<section class="section sec5 contact 5" id="contact">
+			<section class="section sec5 contact 4" id="contact">
 				<div class="return">
 					<br>
-					<i class="fa-solid fa-angle-down fa-2xl"></i>
+					<h2>Contact</h2>
+					
+						<i class="fa-solid fa-angle-down fa-2xl"></i>
+					
+				</div>
+				<div class="content">
+					<section class="icon" id="one"><i class="fa-solid fa-briefcase"></i><a href="https://www.linkedin.com/in/chris-artzoglou/">LinkedIn</a></section>
+					<section class="icon" id="two"><i class="fa-solid fa-code-pull-request fa-sm"></i><a href="https://github.com/ThePerfectLink">GitHub</a></section>
+					<section class="icon" id="three"><i class="fa-solid fa-envelope"></i><a href="mailto: chrisartzoglou@gmail.com">Email</a></section>
 				</div>
 			</section>
 		</div>
@@ -148,11 +170,11 @@
 			<section class="colorPicker">
 				<h4>Planet Color 1</h4>
 				<div class="row">
-					<input type="color" value="#02a2ff" class="1 primary color"> <input type="reset" class="1 primary reset"> 
+					<input type="color" value="#0224ff" class="1 primary color"> <input type="reset" class="1 primary reset"> 
 				</div>
 				<h4>Planet Color 2</h4>
 				<div class="row">
-					<input type="color" value="#0224ff" class="1 secondary color"> <input type="reset" class="1 secondary reset">  
+					<input type="color" value="#02a2ff" class="1 secondary color"> <input type="reset" class="1 secondary reset">  
 				</div>
 				<div class="returnUp">
 					<div class="returnUpwards"><i class="fa-solid fa-angle-up fa-2xl"></i></div>
@@ -187,11 +209,11 @@
 			<section class="colorPicker">
 				<h4>Planet Color 1</h4>
 				<div class="row">
-					<input type="color" value="#332288" class="4 primary color"> <input type="reset" class="4 primary reset"> 
+					<input type="color" value="#21B899" class="4 primary color"> <input type="reset" class="4 primary reset"> 
 				</div>
 				<h4>Planet Color 2</h4>
 				<div class="row">
-					<input type="color" value="#21B899" class="4 secondary color"> <input type="reset" class="4 secondary reset"> 
+					<input type="color" value="#332288" class="4 secondary color"> <input type="reset" class="4 secondary reset"> 
 				</div>
 				<div class="returnUp">
 					<div class="returnUpwards"><i class="fa-solid fa-angle-up fa-2xl"></i></div>
@@ -200,11 +222,11 @@
 			<section class="colorPicker">
 				<h4>Planet Color 1</h4>
 				<div class="row">
-					<input type="color" value="#EB14DC" class="5 primary color"> <input type="reset" class="5 primary reset"> 
+					<input type="color" value="#14EB23" class="5 primary color"> <input type="reset" class="5 primary reset"> 
 				</div>
 				<h4>Planet Color 2</h4>
 				<div class="row">
-					<input type="color" value="#14EB23" class="5 secondary color"> <input type="reset" class="5 secondary reset"> 
+					<input type="color" value="#EB14DC" class="5 secondary color"> <input type="reset" class="5 secondary reset"> 
 				</div>
 				<div class="returnUp">
 					<div class="returnUpwards"><i class="fa-solid fa-angle-up fa-2xl"></i></div>

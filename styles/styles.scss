@@ -217,16 +217,75 @@ header {
   }
 }
 
+#about {
+  .content {
+    column-count: 2;
+    column-width: 49%;
+    column-gap:2%;
+    column-fill: balance;
+    overflow-y: hidden;
+    display: inline-block;
+    text-justify: inter-word;
+    text-align: justify;
+  }
+}
+
 .content {
   display:inline;
+  a {
+    color:var(--color-accent-contrast-3);
+  }
+  a:visited {
+    color:var(--color-accent-secondary);
+  }
+  .icon {
+    margin-right: 1vmin;
+  }
 }
+
+#contact {
+  .content {
+    margin-top: .7%;
+    grid-template-columns: 3;
+    grid-template-rows: 1;
+    row-gap: 2.5%;
+    display:grid;
+    section {
+      font-size: 2em;
+      text-align: center;
+      i {
+        top: 1vmin;
+        margin-right: 1vmin;
+      }
+    }
+    #one {
+      grid-column: 1;
+    }
+    #two {
+      grid-column: 2;
+    }
+    #three {
+      grid-column: 3;
+    }
+  }
+}
+
 
 .active {
   z-index: 1;
   display: block;
-  top: 70vh;
-  min-height: 30vh;
-  overflow-y: scroll;
+  top: 80vmin;
+  min-height: 20vmin;
+  overflow-y: auto;
+  .return h2 {
+    opacity: 100%;
+    float: left;
+  }
+}
+
+#contact.active {
+  top: 90vh;
+  min-height: 10vh;
 }
 
 .expanded{
@@ -246,24 +305,25 @@ li {
 
 .present {
   display: grid;
-  padding-top: 10px;
+  padding-top: 0%;
   padding-bottom: 10px;
-  text-align: center;
+  text-align: center; 
 }
 
 .profession {
   font-size: 5vh;
   line-height: 100%;
   width: auto;
-  height: 2em;
+  
+  height: 2.5em;
   position: relative;
+  overflow-y: hidden;
+  display: grid;
   .bubble {
     display:block;
     overflow-wrap: break-word;
-    width: 100%;
     height: 100%;
     transition: opacity .6s, transform .8s;
-    position: absolute;
     display: table;
     p {
       overflow-wrap: anywhere;
@@ -277,7 +337,7 @@ li {
 
 .activeProf {
   transition-timing-function: ease-out;
-  transform: (translateY(0%));
+  transform: (translateY(-25%));
   opacity: 1;
 
 }
@@ -288,6 +348,11 @@ li {
 }
 
 //controls
+
+.systemControls {
+  position: block;
+}
+
 .controls {
   position: fixed;
   z-index: 10;
@@ -355,6 +420,7 @@ li {
 
 //return
 .return {
+  z-index: 10;
   top: 0;
   position: sticky;
   display: flex;
@@ -372,6 +438,13 @@ li {
   }
   .fa-angle-up {
     float: right;
+  }
+  h2 {
+    top: 2%;
+    opacity: 0%;
+    transition: 0.2s;
+    position:absolute;
+    float: left;
   }
 }
 
