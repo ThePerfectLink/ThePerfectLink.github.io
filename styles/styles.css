@@ -241,6 +241,16 @@ header {
   margin-right: 1vmin;
 }
 
+#redirect {
+  top: 50%;
+  margin-top: 25%;
+  display: block;
+  text-align: center;
+}
+#redirect a {
+  color: purple;
+}
+
 #contact .content {
   margin-top: 0.7%;
   grid-template-columns: 3;

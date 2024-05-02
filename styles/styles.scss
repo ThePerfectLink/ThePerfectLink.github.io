@@ -243,6 +243,16 @@ header {
   }
 }
 
+#redirect{
+  top: 50%;
+  margin-top: 25%;
+  display: block;
+  text-align: center;
+  a {
+    color: purple;
+  }
+}
+
 #contact {
   .content {
     margin-top: .7%;

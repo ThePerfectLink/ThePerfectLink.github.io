@@ -1,0 +1,270 @@
+<!doctype html>
+<html>
+<head onload="translate">
+	<meta charset="utf-8">
+	<title>Portfolio</title>
+	<link rel="stylesheet" href="styles/styles.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link href='https://css.gg/css' rel='stylesheet'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+
+<body class="main-content">
+	<header class="base">
+		<div id="ctx" class="canvas_for_three">
+		</div>
+	</header>
+	<main>
+		<div class="content">
+			<section class="section sec1 home 0" id="home">
+				<div class="return">
+					<br>
+					<h2>Home</h2>
+					<i class="fa-solid fa-angle-down fa-2xl"></i>
+				</div>
+				
+				<div class="content">
+					<div class="subsection">
+						<ul class="systemControls">
+							Controls for the solar system:
+							<li><span class="icon"><i class="fa-solid fa-arrows-up-down"></i></span>&nbsp;|| Zoom camera in or out from planet</li>
+							<li><span class="icon"><i class="fa-solid fa-arrow-pointer"></i></span>&nbsp;|| Center on planet</li>
+						</ul>
+					</div>
+					This little solar system isn't very interactive right now, but it is highly optimized. It runs on the ThreeJS 
+					framework and uses about 600 draws per frame despite its numerous objects. As of right now, you can only 
+					click around on the planets and change the colours of them as well as the light source of the main star.
+					<br><br>
+					Procedural satellites are coming soon!
+				</div>
+			</section>
+			<section class="section sec2 about 1" id="about">
+				<div class="return">
+					<br>
+					<h2>About Me</h2>
+					<i class="fa-solid fa-angle-down fa-2xl"></i>
+				</div>
+				<div class="content">
+
+					<div id="present">
+						<h3 class="present" class="test3" id="test4">Welcome to my website, I hear you've been looking for a </h3>
+							
+						<div class="profession">
+							<div class="bubble">
+								<p id="profession"></p>
+							</div>
+						</div>
+					</div>
+					My name is Chris Artzoglou, I'm a UBC graduate specializing in computer science and philosophy.
+                    A strange combo perhaps, but also one that gives me a unique perspective in the tech industry.
+                    I tend to work from a user perspective and attempt to look at projects holistically when possible.
+                    As such I tend to be most beneficial in position with UI/UX input and leadership roles where 
+                    I can coordinate with interdisciplinary heads.
+				</div>
+			</section>
+			<section class="section sec3 portfolio 2" id="portfolio">
+				<div class="return">
+					<br>
+					<h2>Projects</h2>
+					<i class="fa-solid fa-angle-up fa-2xl"></i>
+					<i class="fa-solid fa-angle-down fa-2xl"></i>
+				</div>
+				<div class="leftContent">
+					<h3> Websites</h3>
+					<div>
+						<section>
+							<a href=./doesithavelungs.html><img src="imgs\DoesItHaveLungsPreview.png">
+								<p>DoesItHaveLungs.com</p>
+							</a>
+						</section>
+						<p>
+							This is a queryable database to find out whether or not a given animal has lungs. It was worked on mostly because I wanted to play around with some REST API stuff. Though the reason it was started was because of a weird inside joke.
+						</p>
+					</div>
+					<div>
+						<section>
+							<a href=https://advicetoascientist.com><img src="imgs\AdviceToAScientistPreview.png">
+								<p>AdviceToAScientist.com</p>
+							</a>
+						</section>
+						<p>
+							A website I work on as the lead full-stack engineer. Initially coded by a particularly adept webmaster, this website is meant to connect students and wayward STEM graduates with STEM experts and resources in order to help guide them through their career. 
+                            I have since taken over as the lead web dev, and do both frontend and backend work to implement new features on my free time.
+						</p>
+					</div>
+					<div>
+						<section>
+							<a href=https://cps.med.ubc.ca><img src="imgs\DoC&PSPreview.jpg">
+								<p>https://cps.med.ubc.ca</p>
+							</a>
+							<br>
+							<a href=https://biochem.ubc.ca><img src="imgs\DoB&MBPreview.jpg">
+								<p>https://biochem.ubc.ca</p>
+							</a>
+						</section>
+						<p>
+							A pair of websites I worked on while working at the UBC, these are the main sites for their corresponding departments. Made to look very similar to one another, I continued and improved upon them during my brief stint at UBC. Redesigning many pages
+                            in order to improve user experience. I also did some brief video editing for the websites and widget development, said widgets are still in use on the front page. Which, considering the fact that these sites went through frequent redesigns, is pretty
+                            good. Both of the sites were made in WordPress.
+						</p>
+					</div>
+				</div>
+				<div class="rightContent">
+					<h3>Software</h3>
+					<div>
+						<section>
+							<a href=https://github.com/ThePerfectLink/Hand-Trainer/releases/tag/Stable><img src="imgs\HandTrainerPreview.png">
+								<p>HandTrainer</p>
+							</a>
+						</section>
+						<p>
+							A Texas Hold 'Em application I made for a friend when he requested from me a way to train his responses when it came to folding or raising given a hand and a seat. Can be customized by altering a file provided so that you can train any given set of
+							acceptable hands with a set of given seats. As of right now though it's limited to 3 types of seats: Early, Middle and Late. soon I will add additional seats and customization for those seats. But that'll have to wait until I have a little more financial 
+							security.
+						</p>
+					</div>
+				</div>
+			</section>
+			<section class="section sec4 blogs 3" id="blog">
+				<div class="return">
+					<br>
+					<h2>Blog</h2>
+					<i class="fa-solid fa-angle-down fa-2xl"></i>
+				</div>
+			</section>
+			<section class="section sec5 contact 4" id="contact">
+				<div class="return">
+					<br>
+					<h2>Contact</h2>
+					
+						<i class="fa-solid fa-angle-down fa-2xl"></i>
+					
+				</div>
+				<div class="content">
+					<section class="icon" id="one"><i class="fa-solid fa-briefcase"></i><a href="https://www.linkedin.com/in/chris-artzoglou/">LinkedIn</a></section>
+					<section class="icon" id="two"><i class="fa-solid fa-code-pull-request fa-sm"></i><a href="https://github.com/ThePerfectLink">GitHub</a></section>
+					<section class="icon" id="three"><i class="fa-solid fa-envelope"></i><a href="mailto: chrisartzoglou@gmail.com">Email</a></section>
+				</div>
+			</section>
+		</div>
+		<div>
+			<section class="colorPicker">
+				<h4>Star Light 1</h4>
+				<div class="row">
+					<input type="color" value="#fcfa8c" class="0 primary color"> <input type="reset" class="0 primary reset">
+				</div>
+				<h4>Star Light 2</h4>
+				<div class="row">
+					<input type="color" value="#ffb21b" class="0 secondary color"><input type="reset" class="0 secondary reset">
+				</div>
+				<h4>Star Light 3</h4>
+				<div class="row">
+					<input type="color" value="#ff5e48" class="0 tertiary color"> <input type="reset" class="0 tertiary reset"> 
+				</div>
+				<div class="returnUp">
+					<div class="returnUpwards"><i class="fa-solid fa-angle-up fa-2xl"></i></div>
+				</div>
+			</section>
+			<section class="colorPicker">
+				<h4>Planet Color 1</h4>
+				<div class="row">
+					<input type="color" value="#0224ff" class="1 primary color"> <input type="reset" class="1 primary reset"> 
+				</div>
+				<h4>Planet Color 2</h4>
+				<div class="row">
+					<input type="color" value="#02a2ff" class="1 secondary color"> <input type="reset" class="1 secondary reset">  
+				</div>
+				<div class="returnUp">
+					<div class="returnUpwards"><i class="fa-solid fa-angle-up fa-2xl"></i></div>
+				</div>
+			</section>
+			<section class="colorPicker">
+				<h4>Planet Color 1</h4>
+				<div class="row">
+					<input type="color" value="#ff3c19" class="2 primary color"> <input type="reset" class="2 primary reset"> 
+				</div>
+				<h4>Planet Color 2</h4>
+				<div class="row">
+					<input type="color" value="#ffaf19" class="2 secondary color"> <input type="reset" class="2 secondary reset"> 
+				</div>
+				<div class="returnUp">
+					<div class="returnUpwards"><i class="fa-solid fa-angle-up fa-2xl"></i></div>
+				</div>
+			</section>
+			<section class="colorPicker">
+				<h4>Planet Color 1</h4>
+				<div class="row">
+					<input type="color" value="#0dff7a" class="3 primary color"> <input type="reset" class="3 primary reset"> 
+				</div>
+				<h4>Planet Color 2</h4>
+				<div class="row">
+					<input type="color" value="#8877f3" class="3 secondary color"> <input type="reset" class="3 secondary reset">  
+				</div>
+				<div class="returnUp">
+					<div class="returnUpwards"><i class="fa-solid fa-angle-up fa-2xl"></i></div>
+				</div>
+			</section>
+			<section class="colorPicker">
+				<h4>Planet Color 1</h4>
+				<div class="row">
+					<input type="color" value="#21B899" class="4 primary color"> <input type="reset" class="4 primary reset"> 
+				</div>
+				<h4>Planet Color 2</h4>
+				<div class="row">
+					<input type="color" value="#332288" class="4 secondary color"> <input type="reset" class="4 secondary reset"> 
+				</div>
+				<div class="returnUp">
+					<div class="returnUpwards"><i class="fa-solid fa-angle-up fa-2xl"></i></div>
+				</div>
+			</section>
+			<section class="colorPicker">
+				<h4>Planet Color 1</h4>
+				<div class="row">
+					<input type="color" value="#14EB23" class="5 primary color"> <input type="reset" class="5 primary reset"> 
+				</div>
+				<h4>Planet Color 2</h4>
+				<div class="row">
+					<input type="color" value="#EB14DC" class="5 secondary color"> <input type="reset" class="5 secondary reset"> 
+				</div>
+				<div class="returnUp">
+					<div class="returnUpwards"><i class="fa-solid fa-angle-up fa-2xl"></i></div>
+				</div>
+			</section>
+		</div>
+	</main>
+	<div class="controls">
+		<div class="control control-1 navtop" data-id="home"> <i class="fa-solid fa-house-chimney-window fa-2xl navicon navtop" data-id="home"></i> </div>
+		<div class="control control-2" data-id="about"> <i class="fa-solid fa-user-graduate fa-2xl navicon" data-id="about"></i> </div>
+		<div class="control control-3" data-id="portfolio"> <i class="fa-solid fa-box-archive fa-2xl navicon" data-id="portfolio"></i> </div>
+		<div class="control control-4" data-id="blog"> <i class="fa-solid fa-feather fa-2xl navicon" data-id="blog"></i> </div>
+		<div class="control control-5 navbottom" data-id="contact"> <i class="fa-solid fa-inbox fa-2xl navicon" data-id="contact"></i> </div>
+	</div> 
+
+	<script src="js/three.js"></script>
+	<script type="module" src="panels.js"></script>
+	<script type="module" src="translate.js"></script>
+	<script type="module" src="nav.js"></script>
+	<script type="module" src="app.js"></script>
+	<script type="module">
+		import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js'
+		var firebaseConfig = {
+			apiKey: process.env.DB_API_KEY,
+			authDomain: process.env.DB_AUTH_DOMAIN,
+			// The value of `databaseURL` depends on the location of the database
+			databaseURL: process.env.DB_URL,
+			projectId: process.env.DB_ID,
+			storageBucket: process.env.DB_STORAGE,
+			messagingSenderId: process.env.DB_SENDER_ID,
+			appId: process.env.DB_APP_ID,
+			// For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
+			measurementId: process.env.DB_MEASUREMENT_ID,
+		};
+
+		console.log(firebase.initializeApp(firebaseConfig));
+	</script>
+
+</body>
+</html>
